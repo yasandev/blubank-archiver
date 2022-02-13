@@ -10,11 +10,17 @@ jobs:
     
     steps:
       - name: checkout repo content
-        uses: actions/checkout@v2 # checkout the repository content to github runner.
+        uses: actions/checkout@v2
+
       - name: setup python
         uses: actions/setup-python@v2
         with:
           python-version: 3.9
-      - name: Execute Script # run the run.py to get the latest data
+
+      - name: Install Required Modules
+        run: |
+            pip install requests
+
+      - name: Execute Script
         run: |
             python main.py
