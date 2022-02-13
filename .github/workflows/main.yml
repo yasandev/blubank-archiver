@@ -19,7 +19,8 @@ jobs:
 
       - name: Install Required Modules
         run: |
-            pip install requests
+            pip install requests 
+            pip install BeautifulSoup 
 
       - name: Execute Script
         run: |
