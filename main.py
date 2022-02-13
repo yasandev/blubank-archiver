@@ -5,15 +5,18 @@ blue_bank_url = "https://blubank.com/"
 
 
 def get_links(url):
+    print("Starting")
     links = []
     website = requests.get(url)
     website_text = website.text
     soup = BeautifulSoup(website_text, "html.parser")
 
-    for link in soup.find_all('a',{"class":"footer__btn"}):
+    for link in soup.find_all('a', {"class": "footer__btn"}):
         href = str(link.get('href'))
         if ".apk" in href:
             links.append(href)
+
+    print("Found", len(links), "apk links")
 
     for link in links:
         print(link)
