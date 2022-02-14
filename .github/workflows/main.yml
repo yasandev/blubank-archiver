@@ -33,6 +33,6 @@ jobs:
         uses: s0/git-publish-subdir-action@master
         env:
           REPO: self
-          BRANCH: main
-          FOLDER: archive
+          BRANCH: archive
+          FOLDER: downloads
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
