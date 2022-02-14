@@ -1,6 +1,6 @@
 name: Check for new BluBank APKs
 on:
-  push:
+  workflow_dispatch
   
 jobs:
   build:
