@@ -1,11 +1,15 @@
+import os
+import urllib
 import requests
 from bs4 import BeautifulSoup
 
-blue_bank_url = "https://blubank.com/"
+BLU_BANK_URL = "https://blubank.com/"
+DOWNLOADS_DIR = '.\\downloads'
 
 
 def get_links(url):
-    print("Starting")
+    print("Loading", url)
+
     links = []
     website = requests.get(url)
     website_text = website.text
@@ -21,5 +25,20 @@ def get_links(url):
     for link in links:
         print(link)
 
+    print("Starting to download apk files")
 
-get_links(blue_bank_url)
+    for link in links:
+        print("Starting to download", link)
+        # Split on the rightmost / and take everything on the right side of that
+        name = link.rsplit('/', 1)[-1]
+        filename = os.path.join(DOWNLOADS_DIR, name)
+
+        # Download the file if it does not exist
+        if not os.path.isfile(filename):
+            print("Starting download")
+            urllib.request.urlretrieve(link, filename)
+        else:
+            print("File already downloaded")
+
+
+get_links(BLU_BANK_URL)
