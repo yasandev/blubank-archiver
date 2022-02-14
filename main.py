@@ -4,7 +4,6 @@ import requests
 from bs4 import BeautifulSoup
 
 BLU_BANK_URL = "https://blubank.com/"
-DOWNLOADS_DIR = '.\\downloads'
 
 
 def get_links(url):
@@ -31,7 +30,7 @@ def get_links(url):
         print("Starting to download", link)
         # Split on the rightmost / and take everything on the right side of that
         name = link.rsplit('/', 1)[-1]
-        filename = os.path.join(DOWNLOADS_DIR, name)
+        filename = os.path.join("./", name)
 
         # Download the file if it does not exist
         if not os.path.isfile(filename):
