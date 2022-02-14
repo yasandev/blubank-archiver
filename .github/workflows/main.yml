@@ -28,4 +28,11 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           path: ./*.apk
-      
+          
+      - name: Add APK to
+        uses: s0/git-publish-subdir-action@master
+        env:
+          REPO: self
+          BRANCH: main
+          FOLDER: archive
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
