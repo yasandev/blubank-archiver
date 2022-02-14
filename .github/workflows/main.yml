@@ -1,6 +1,8 @@
 name: Check for new BluBank APKs
 on:
-  workflow_dispatch
+  workflow_dispatch:
+  schedule:
+  - cron: "0 * * * *"
   
 jobs:
   build:
@@ -23,11 +25,6 @@ jobs:
       - name: Execute Script
         run: |
             python main.py
-          
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          path: ./*.apk
           
       - name: Add APK to archive
         uses: s0/git-publish-subdir-action@master
