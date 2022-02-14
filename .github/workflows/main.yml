@@ -25,3 +25,10 @@ jobs:
       - name: Execute Script
         run: |
             python main.py
+          
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: blubank-apk
+          path: ./*.apk
+      
