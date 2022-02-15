@@ -2,7 +2,7 @@ name: Check for new BluBank APKs
 on:
   workflow_dispatch:
   schedule:
-  - cron: "0 0,12 * * *"
+  - cron: "30 20 * * *"
   
 jobs:
   build:
