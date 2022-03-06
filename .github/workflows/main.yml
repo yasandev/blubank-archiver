@@ -34,3 +34,5 @@ jobs:
           FOLDER: downloads
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SKIP_EMPTY_COMMITS: true
+          SQUASH_HISTORY: false
+          MESSAGE: "Update blubank APK"
