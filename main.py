@@ -3,14 +3,14 @@ import urllib
 import requests
 from bs4 import BeautifulSoup
 
-BLU_BANK_URL = "https://blubank.com/"
+BLU_BANK_URL = "https://blubank.sb24.ir/"
 
 
 def get_links(url):
     print("Loading", url)
 
     links = []
-    website = requests.get(url)
+    website = requests.get(url, headers={'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'}, timeout=15)
     website_text = website.text
     soup = BeautifulSoup(website_text, "html.parser")
 
