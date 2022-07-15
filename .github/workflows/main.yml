@@ -1,11 +1,13 @@
 name: Check for new BluBank APKs
 on:
+  push:
+    branches: [ main ]
   schedule:
   - cron: "30 20 * * *"
   workflow_dispatch:
   
 jobs:
-  build:
+  update_apks:
     runs-on: ubuntu-latest
     
     steps:
