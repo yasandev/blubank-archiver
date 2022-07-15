@@ -3,7 +3,7 @@ import urllib
 import requests
 from bs4 import BeautifulSoup
 
-BLU_BANK_URL = "https://blubank.sb24.ir/"
+BLU_BANK_URL = "https://blubank.com/"
 
 
 def get_links(url):
