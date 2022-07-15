@@ -10,7 +10,7 @@ def get_links(url):
     print("Loading", url)
 
     links = []
-    website = requests.get(url, headers={'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'}, timeout=15)
+    website = requests.get(url)
     website_text = website.text
     soup = BeautifulSoup(website_text, "html.parser")
 
